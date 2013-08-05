@@ -361,7 +361,7 @@ Inverter::displayCumulativeData(
 	else
 	{
 		printf("%s%s",
-			Utils::getThousandsValue(data.energy), delimiter);
+			Utils::getValue(data.energy), delimiter);
 		printf("%s%s",
 			Utils::getValue(data.maximumPower), delimiter);
 		printf("%s%s",
