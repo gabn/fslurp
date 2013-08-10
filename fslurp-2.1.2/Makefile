@@ -10,7 +10,7 @@ TARGETS		= fslurp simIFCEasy \
 
 COMMON_SRC	= args.cpp interface.cpp inverter.cpp report.cpp \
 		main.cpp request.cpp response.cpp utils.cpp \
-		device.cpp sensor.cpp iterator.cpp
+		device.cpp sensor.cpp iterator.cpp EnergyExtendedRequest.cpp
 
 COMM_SRC	= comm.cpp
 SIMIFCEASY	= simIFCEasy.cpp

@@ -160,6 +160,37 @@ class Request
 		const char* decodeCommand(void);
 };
 
+class EnergyExtendedRequest
+{
+	public:
+		EnergyExtendedRequest(void);
+		virtual ~EnergyExtendedRequest(void) { }
+
+		void setDeviceOption(unsigned char deviceOption);
+		void setDeviceNumber(unsigned char deviceNumber);
+		void setCommand(unsigned char command);
+		void setAnswerFormatID(unsigned char AnswerFormatID);
+		unsigned char length(void);
+		const void* requestBytes(void);
+		void send(Comm& comm);
+
+	private:
+
+		struct EnergyExtendedRequestData
+		{	
+			unsigned char startBytes[FRONIUS_NUM_START_BYTES];
+			unsigned char length;
+			unsigned char deviceOption;
+			unsigned char deviceNumber;
+			unsigned char command;
+			unsigned char AnswerFormatID;
+			unsigned char checksum;
+		};    
+		EnergyExtendedRequestData  request_;
+		void calculateChecksum(void);
+		const char* decodeCommand(void);
+};
+
 class Response
 {
 	public:
